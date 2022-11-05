@@ -3,19 +3,24 @@ using UnityEngine;
 
 public class InstantiateObjects : MonoBehaviour
 {
-    public GameObject objectsSpawn;
+    public GameObject gameObjectToSpawn;
     public int totalNumberOfObjectsToSpawn;
     public int numberOfObjectsSpawned = 0;
     Vector3 randomSpawnPosition = new Vector3(0, 0, 0);
 
 
-    IEnumerator Start()
+    public void Start()
     {
-        while(numberOfObjectsSpawned < totalNumberOfObjectsToSpawn)
+        randomSpawnPosition = new Vector3(Random.Range(-10, 11), 500, Random.Range(-10, 11));
+        SpawnGameObjects(randomSpawnPosition);
+    }
+
+    IEnumerator SpawnGameObjects(Vector3 spawnPosition)
+    {
+        while (numberOfObjectsSpawned < totalNumberOfObjectsToSpawn)
         {
-            randomSpawnPosition = new Vector3(Random.Range(-10, 11), 500, Random.Range(-10, 11));
             yield return new WaitForSeconds(0.00001f);
-            SpawnObject(randomSpawnPosition);
+            SpawnObject(spawnPosition);
         }
     }
 
@@ -23,7 +28,6 @@ public class InstantiateObjects : MonoBehaviour
     private void Update()
     {
         numberOfObjectsSpawned = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log(numberOfObjectsSpawned);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,7 +44,7 @@ public class InstantiateObjects : MonoBehaviour
     {
         if (numberOfObjectsSpawned < totalNumberOfObjectsToSpawn)
         {
-            Instantiate(objectsSpawn, randomSpawnPosition, Quaternion.identity);
+            Instantiate(gameObjectToSpawn, randomSpawnPosition, Quaternion.identity);
             numberOfObjectsSpawned++;
         }
     }

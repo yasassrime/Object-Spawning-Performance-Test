@@ -244,7 +244,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678580561}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7b8a29adeecd4fb98cd2969315cffe2, type: 3}
   m_Name: 
@@ -252,11 +252,7 @@ MonoBehaviour:
   pooledObjects:
   - {fileID: 6953955697152034954, guid: 47f2430d704a44eada15eccfc12f8543, type: 3}
   objectToPool: {fileID: 6953955697152034954, guid: 47f2430d704a44eada15eccfc12f8543, type: 3}
-  amountToPool: 10000
-  itemsToPool:
-  - amountToPool: 10000
-    objectToPool: {fileID: 6953955697152034954, guid: 47f2430d704a44eada15eccfc12f8543, type: 3}
-    shouldExpand: 0
+  amountToPool: 1000
 --- !u!114 &678580569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,13 +260,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678580561}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c95e57eeaea414cd3ac515fc3536e224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsSpawn: {fileID: 6953955697152034954, guid: 47f2430d704a44eada15eccfc12f8543, type: 3}
-  totalNumberOfObjectsToSpawn: 10000
+  gameObjectToSpawn: {fileID: 6953955697152034954, guid: 47f2430d704a44eada15eccfc12f8543, type: 3}
+  totalNumberOfObjectsToSpawn: 1000
   numberOfObjectsSpawned: 0
 --- !u!1 &705507993
 GameObject:

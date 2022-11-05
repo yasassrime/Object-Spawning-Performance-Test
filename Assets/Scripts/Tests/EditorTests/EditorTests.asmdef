@@ -1,5 +1,5 @@
 {
-    "name": "EditTests",
+    "name": "EditorTests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
@@ -15,7 +15,7 @@
     "precompiledReferences": [
         "nunit.framework.dll"
     ],
-    "autoReferenced": false,
+    "autoReferenced": true,
     "defineConstraints": [
         "UNITY_INCLUDE_TESTS"
     ],
